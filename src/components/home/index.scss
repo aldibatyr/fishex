@@ -1,0 +1,66 @@
+.home-block {
+  display: flex;
+  background-color: var(--green);
+
+  &:hover > :not(:hover) {
+    width: 30%;
+  }
+
+  .item {
+    width: calc(100%/3);
+    height: 100vh;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .company-pic {
+      width: 100%;
+      aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+
+    &:hover {
+      width: 40%;
+    }
+
+    &-1 {
+      background-color: var(--purple);
+    }
+
+    &-2 {
+      background-color: var(--red);
+    }
+
+    &-3 {
+      background-color: var(--green);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home-block {
+    display: flex;
+    flex-direction: column;
+  
+    .item {
+      width: 100%;
+      height: calc(100vh/3);
+  
+      .company-pic {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .home-block {  
+    .item {
+      .company-pic {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.main-content-block {
+  width: 85%;
+  margin: 0 0 0 15%;
+}
+
+@media (max-width: 768px) {
+  .main-content-block {
+    width: 100%;
+    margin: 0;
+  }
+}

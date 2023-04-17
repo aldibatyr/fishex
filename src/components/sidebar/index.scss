@@ -1,0 +1,113 @@
+.sidebar-block {
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--gray);
+    cursor: pointer;
+    padding: 8px;
+
+    &.frozen {
+      background: url("/img/sidebar/frozen.svg") no-repeat center/contain;
+    }
+
+    &.fish-snacks {
+      background: url("/img/sidebar/fish_snacks.svg") no-repeat center/contain;
+    }
+
+    &.half-made {
+      background: url("/img/sidebar/half_made.svg") no-repeat center/contain;
+    }
+
+    &.about {
+      background: url("/img/sidebar/about.svg") no-repeat center/contain;
+    }
+
+    &.contacts {
+      background: url("/img/sidebar/contacts.svg") no-repeat center/contain;
+    }
+  }
+
+  .link {
+    height: calc(90% / 5 - 16px);
+    border-top: 1px solid var(--gray);
+    display: flex;
+    align-items: flex-end;
+    transition: 0.3s;
+
+    &:hover {
+      border-right: 16px solid var(--secondary-color);
+    }
+
+    &.active {
+      border-right: 16px solid var(--primary-color);
+    }
+
+    .text {
+      text-align: center;
+    }
+  }
+
+  .logo {
+    height: calc(10% - 16px);
+
+    img {
+      width: 80%;
+    }
+  }
+}
+
+.menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar-block {
+    display: none;
+    backdrop-filter: blur(5px) brightness(60%);
+    
+    &.show {
+      display: block;
+      width: 100%;
+      z-index: 10;
+    }
+    .item {
+      width: 33%;
+      background-color: var(--white) !important;
+    }
+
+    .link {
+      &:hover {
+        border-right: 1px solid var(--gray);
+      }
+
+      &.active {
+        border-right: 1px solid var(--gray);
+      }
+
+      .text {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .menu {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    display: block;
+    z-index: 10;
+
+    &.show {
+      left: calc(100vw - 43px);
+    }
+  }
+}

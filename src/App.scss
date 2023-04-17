@@ -1,0 +1,21 @@
+@import url("./scss/variables.scss");
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url("./fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+  font-family: "Montserrat";
+  // font-family: "Bebas";
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+}
+
+.MuiButton-root {
+  color: var(--primary-color) !important;
+}
